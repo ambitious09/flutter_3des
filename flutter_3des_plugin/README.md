@@ -14,6 +14,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## introduce （目的）
+这是在原来的作者之上增加了3des解密，之前的文章可以查看https://github.com/laijinxian/flutter_3des_plugin
   1. 目的： 该插件为 ECB模式 3des 加密， 解决 flutter => java后台 => 硬件 相联系的需求 （需保证App端、服务端、硬件三方加密结果一致）；
  
   2. 现有的 pub.dev 插件如（`flutter_3des， flutter_des， des_plugin`）加密后的结果均和 java、硬件加密的结果不一致， 故诞生了这个3des加密插件。
