@@ -38,3 +38,7 @@ android {
         disable 'InvalidPackage'
     }
 }
+
+dependencies {
+    implementation files('libs\\commons-codec-1.14.jar')
+}

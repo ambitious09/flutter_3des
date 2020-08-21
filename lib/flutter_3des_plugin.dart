@@ -17,4 +17,7 @@ class Flutter3desPlugin {
   static Future<String> deccode( String data,String key) async{
     return await _channel.invokeMethod('deccode' , <String,dynamic>{'data':data,'key':key});
   }
+  static Future<String> user_encrypt( String data,String psd_first_key,String psd_secondt_key,String psd_third_key) async{
+    return await _channel.invokeMethod('user_encrypt' , <String,dynamic>{'data':data,'first_key':psd_first_key,'second_key':psd_secondt_key,'third_key':psd_third_key});
+  }
 }

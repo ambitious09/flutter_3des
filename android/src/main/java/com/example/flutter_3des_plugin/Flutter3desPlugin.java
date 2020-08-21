@@ -70,6 +70,20 @@ public class Flutter3desPlugin implements FlutterPlugin, MethodCallHandler {
                 }
                 result.success(resultData);
                 break;
+            case "user_encrypt":
+                Log.i("tag","加密。。。。。。");
+                String user_body = call.argument("data");
+                String first_key = call.argument("first_key");
+                String second_key = call.argument("second_key");
+                String third_key = call.argument("third_key");
+                String ency_Data = null;
+                try {
+                    ency_Data = new DesUtil().strEnc(user_body, first_key, second_key, third_key);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                result.success(ency_Data);
+                break;
             default:
                 result.notImplemented();
                 break;

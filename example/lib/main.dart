@@ -18,7 +18,9 @@ class _MyAppState extends State<MyApp> {
   final String _data="sayayfAVDcS8LoY1Gbsy914rGiBSx+zxP8vKmqKB67Fmv9xLQSBGVroMZTKP4Xq5B9kxlCCcGLaeVsf+nndi8D8opnVOG6x5VAGEZ0qYQoAXygaAplHut5jyx3Tghq7/s6Zkl5xQzM5uVpSCL8r+mJb+pGqt9baklzi7Nq3bBJXw7H7hP7IImINTI4Xch+Xv644XN85divHf4019ShRQ9Rw1yDCx3Iw1xPcxdrxoDvRX6pX9eBreThtEBfZBV2aANi+ogGLmHVSx3IAdtJ0MjN9cd8E33S1Jh9IEliETBflOOJMAn1ij2NaLy9kBmcCoT0knld+Akjp1FiQ6zodQ7BE47ps0rR/6j10YPVvpzvZA5CgXU0VNwhOUD9LsT5JBf7cz3/7BIAZHPsWkp8thbLoR2VkInPi+REip43TtrBZ3I2osgu9IxjohYSsKLoqmYxH8qNzbgSLWq5qM+pH8AkH9cfH8G1Xi3EE/mXADGURYYX85MJ/a+wSe0tJ3afeo3JbvdyiEzujVpkvcGYNBxZ2IXeY0VIOeic5JZ6uom0TJYPP3GVKnQGHz0bR+hNADGm8v8hkggZs/a8h+UY8KE2LB1WclQG/0yvOvHgGYhp1QreA+JvhCrmBU/rSBjV7i7A5+5RTafbkecwJLjYWM9h4x6iUev1Ze78isnRqATesgxgSIUjt1sPnUha7h1kJXHpwpBLKgvElLP9YKxCojNEIgMb7PixtZOAPuV4DiXAo=";
   final String _key="TMA2019";
   String _result  = '';
-
+   String psd_first_key="trust";
+   String psd_second_key="matrix";
+   String psd_third_key="tm-sona";
   @override
   void initState() {
     super.initState();
@@ -27,7 +29,7 @@ class _MyAppState extends State<MyApp> {
 
   // 3des 加密
   encrypt () {
-    Flutter3desPlugin.deccode( _data,_key).then((res) {
+    Flutter3desPlugin.user_encrypt("l00",psd_first_key,psd_second_key,psd_third_key).then((res) {
       // TODO: res就是加密后的数据
       setState(() {
         _result = res; 
