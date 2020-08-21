@@ -5,12 +5,10 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import org.json.JSONObject;
-
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import org.apache.commons.codec.binary.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -113,7 +111,7 @@ public class Flutter3desPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     public static String decode3Des( String desStr,byte[] key){
-        byte[] src = Base64.decode(desStr,Base64.DEFAULT);
+        byte[] src = Base64.decodeBase64(desStr);
 
         try {
             //生成密钥
