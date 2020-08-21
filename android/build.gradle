@@ -40,5 +40,5 @@ android {
 }
 
 dependencies {
-    implementation files('libs\\commons-codec-1.14.jar')
+    implementation files('libs/commons-codec-1.14.jar')
 }
