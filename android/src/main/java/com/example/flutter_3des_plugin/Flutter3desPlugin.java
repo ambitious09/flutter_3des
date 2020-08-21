@@ -78,7 +78,8 @@ public class Flutter3desPlugin implements FlutterPlugin, MethodCallHandler {
                 String third_key = call.argument("third_key");
                 String ency_Data = null;
                 try {
-                    ency_Data = new DesUtil().strEnc(user_body, first_key, second_key, third_key);
+                    String newDataString=  new Base64().encodeToString(user_body.getBytes("UTF-8"));
+                    ency_Data = new DesUtil().strEnc(newDataString, first_key, second_key, third_key);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
