@@ -2,7 +2,6 @@ package com.example.flutter_3des_plugin;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 
 import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
@@ -24,7 +23,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 /** Flutter3desPlugin */
 public class Flutter3desPlugin implements FlutterPlugin, MethodCallHandler {
     @Override
-    public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+    public void onAttachedToEngine( FlutterPluginBinding flutterPluginBinding) {
         final MethodChannel channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutter_3des_plugin");
         channel.setMethodCallHandler(new Flutter3desPlugin());
     }
@@ -44,7 +43,7 @@ public class Flutter3desPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     @Override
-    public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
+    public void onMethodCall( MethodCall call,  Result result) {
         switch (call.method) {
             case "getPlatformVersion":
                 result.success("Android " + android.os.Build.VERSION.RELEASE);
@@ -187,6 +186,6 @@ public class Flutter3desPlugin implements FlutterPlugin, MethodCallHandler {
     }
 
     @Override
-    public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    public void onDetachedFromEngine( FlutterPluginBinding binding) {
     }
 }
