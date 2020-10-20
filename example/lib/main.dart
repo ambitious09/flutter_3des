@@ -36,6 +36,15 @@ class _MyAppState extends State<MyApp> {
       });
     });
   }
+  // 3des 解密
+  decrypt () {
+    Flutter3desPlugin.deccode(_data,_key).then((res) {
+      // TODO: res就是加密后的数据
+      setState(() {
+        _result = res;
+      });
+    });
+  }
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
@@ -73,7 +82,7 @@ class _MyAppState extends State<MyApp> {
               new Text('加密的key： $_key'),
               RaisedButton(
               onPressed: (){
-                encrypt();
+                decrypt();
               },
               child: Text("执行3des加密"),
             ),
